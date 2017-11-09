@@ -1,0 +1,103 @@
+/*!
+ * Start Bootstrap - Modern Business (http://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+.portfolio-card{
+  padding: 0px;
+}
+.portfolio-box {
+  text-align: center;
+  position: relative;
+  display: block;
+  max-width: 650px;
+  margin: 0 auto; }
+  .portfolio-box .portfolio-box-caption {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    opacity: 0;
+    color: white;
+    background: rgb(227, 217, 30);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s; }
+    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      text-align: center; }
+      .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
+      .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+        padding: 0 15px;
+        font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; }
+      .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase; }
+      .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+        font-size: 18px; }
+  .portfolio-box:hover .portfolio-box-caption {
+    opacity: 0.95; }
+  .portfolio-box:focus {
+    outline: none; }
+  @media (min-width: 768px) {
+    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+      font-size: 16px; }
+    .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+      font-size: 22px; } }
+.carousel-item::before{
+  background-color: rgba(0, 0, 0, 0.37);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+.card .h-100{
+  border: 0;
+}
+.portfolio-item {
+   margin-bottom: 0;
+}
+.ctitle{
+  margin-top: 20px;
+  text-align: center;
+}
+a:hover h4{
+  color: #FFFFFF;
+}
+a:hover {
+  text-decoration: none; 
+}
+a h4{
+  color: black;
+  text-decoration: none; 
+}
+.my-4{
+  text-align: center;
+}
+.btn{
+  background: rgb(227, 217, 30);
+  border-color:  rgb(227, 217, 30);
+  color: white;
+}
+.btn:hover{
+  background: rgb(227, 217, 30);
+  border-color:  rgba(255, 255, 255, 0.37);
+  box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.37);
+  color: white;
+}
+.fa::before{
+  color:rgb(227, 217, 30);
+}
+h2{
+  margin-top: 50px;
+}
+#map{
+  margin-top: 20px;
+}
