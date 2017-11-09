@@ -3,6 +3,15 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
+ #n1{
+  background-image: url("/public/img/news/n1.jpg");
+ }
+ #n2{
+  background-image: url("/public/img/news/n2.jpg");
+ }
+ #n3{
+  background-image: url("/public/img/news/n3.jpg");
+ }
 .portfolio-card{
   padding: 0px;
 }

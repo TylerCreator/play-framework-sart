@@ -88,8 +88,6 @@
            </div>
          </div>
        </nav>
-       @n1 = routes.Assets.versioned("img/news/n1.jpg")
-       n1.substring(1)
        <header>
          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
            <ol class="carousel-indicators">
@@ -98,24 +96,24 @@
              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
            </ol>
            <div class="carousel-inner" role="listbox">
-             <!-- Slide One - Set the background image for this slide in the line below -->
-             <div class="carousel-item active" style="background-image: url(@routes.Assets.versioned("img/news/n1.jpg"));">
+             <!-- Slide One - Set the background image for this slide in the line below style="background-image: url(@routes.Assets.versioned("img/news/n1.jpg"));"-->
+             <div class="carousel-item active" id="n1">
                <div class="carousel-caption d-none d-md-block">
                  <h3>Скидка</h3>
                  <p>Скидка на коллекцию одежды 2015-2016 года</p>
                  <button type="button" class="btn btn-light">ПОДРОБНЕЕ</button>
                </div>
              </div>
-             <!-- Slide Two - Set the background image for this slide in the line below -->
-             <div class="carousel-item" style = "background-image: url(@routes.Assets.versioned("img/news/n2.jpg"));">
+             <!-- Slide Two - Set the background image for this slide in the line below background-image: url(@routes.Assets.versioned("img/news/n2.jpg"));" -->
+             <div class="carousel-item" id="n2">
                <div class="carousel-caption d-none d-md-block">
                  <h3>Акция</h3>
                  <p>При покупке любой техники - шлем в подарок</p>
                  <button type="button" class="btn btn-light">ПОДРОБНЕЕ</button>
                </div>
              </div>
-             <!-- Slide Three - Set the background image for this slide in the line below -->
-             <div class="carousel-item" style="background-image: url(@routes.Assets.versioned("img/news/n3.jpg"));">
+             <!-- Slide Three - Set the background image for this slide in the line below style="background-image: url(@routes.Assets.versioned("img/news/n3.jpg"));"-->
+             <div class="carousel-item" id="n3">
                <div class="carousel-caption d-none d-md-block">
                  <h3>Предложение</h3>
                  <p>Специальное предложение: при покупке снегоходов 2016 года - гарантия 3 года</p>
