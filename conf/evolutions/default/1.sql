@@ -8,6 +8,7 @@ create table feature (
   title                         varchar(255),
   description                   varchar(255),
   image_url                     varchar(255),
+  extra                         varchar(255),
   constraint pk_feature primary key (id)
 );
 

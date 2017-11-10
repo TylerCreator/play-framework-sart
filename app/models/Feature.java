@@ -20,6 +20,7 @@ public class Feature extends Model {
     public String description;
 
     public String imageUrl;
-
+    
+    public String extra;
     public static final Finder<Long, Feature> find = new Finder<>(Feature.class);
 }
