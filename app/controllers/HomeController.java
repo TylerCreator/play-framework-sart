@@ -1,15 +1,13 @@
 package controllers;
 
-import io.ebean.PagedList;
 import models.Feature;
+import models.User;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.*;
 
-import play.twirl.api.Html;
 import router.Routes;
 import views.html.*;
-
 import javax.inject.Inject;
 import java.util.List;
 
@@ -39,7 +37,8 @@ public class HomeController extends Controller {
 
     public Result index() {
         List<Feature> all = Feature.find.all();
-        return ok(myMain.render(all));
+        List<User> a = User.find.all();
+        return ok(myMain.render(all,a));
     }
 
     /**

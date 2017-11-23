@@ -1,5 +1,5 @@
 
-@(all: List[Feature])
+@(all: List[Feature], a:List[User])
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,11 @@
      </head>
    
      <body>
-   
+       @for(user <- a.asScala){
+       <row>
+         @user.email @user.salt
+       </row>
+       }
        <!-- Navigation -->
        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
          <div class="container">
