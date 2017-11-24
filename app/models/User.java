@@ -123,4 +123,22 @@ public class User extends Model {
     public static boolean emailAvailable(String email) {
         return (find.byId(email) == null);
     }
+
+    /**
+     * Проверяем подошел ли пароль
+     *
+     * @param password пароль
+     * @return в случае совпадения пароля, возвращет true, иначе возвращает false
+     */
+    private boolean checkPassword(String password) {
+        return getHash(password+salt).equals(passwordHash);
+    }
+
+    public static String authenticate(String email, String password) {
+        User user = find.byId(email);
+        if (user == null || !user.checkPassword(password))
+            return "Пользователь с данным email не зарегистрирован или не верный пароль";
+        else
+            return null;
+    }
 }
