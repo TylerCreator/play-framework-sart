@@ -1,5 +1,6 @@
 package models;
 
+import controllers.Secured;
 import io.ebean.Finder;
 import io.ebean.Model;
 import org.apache.commons.codec.binary.Base64;
@@ -14,6 +15,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Random;
+
+import static play.mvc.Http.Context.current;
 
 @Entity
 public class User extends Model {
@@ -130,7 +133,7 @@ public class User extends Model {
      * @param password пароль
      * @return в случае совпадения пароля, возвращет true, иначе возвращает false
      */
-    private boolean checkPassword(String password) {
+    public boolean checkPassword(String password) {
         return getHash(password+salt).equals(passwordHash);
     }
 
@@ -138,6 +141,17 @@ public class User extends Model {
         User user = find.byId(email);
         if (user == null || !user.checkPassword(password))
             return "Пользователь с данным email не зарегистрирован или не верный пароль";
+        else
+            return null;
+    }
+
+
+    public static String changePsswrd(String _password) {
+        User user = find.byId(new Secured().getUsername(current()));
+        if (user!=null) {
+            user.setPassword(_password);
+            return "Пароль успешно изменён";
+        }
         else
             return null;
     }

@@ -34,6 +34,12 @@ GET     /login                       controllers.Auth.login()
 #Выйти из профиля
 GET     /logout                       controllers.Auth.logout()
 
+#Форма редактирования профиля администратора
+GET     /profile                       controllers.Auth.profile()
+
+#Сменить пароль
+GET     /chpsswrd                      controllers.Auth.changePsswrd()
+
 # Отображает статические файлы из папки /public в /public URL
 GET     /public/*file               controllers.Assets.versioned(path="/public", file: Asset)
 

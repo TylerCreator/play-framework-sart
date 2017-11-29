@@ -1,6 +1,8 @@
 package controllers;
 
+import models.ChangePsswrd;
 import models.Login;
+import play.mvc.Security;
 import router.Routes;
 import models.User;
 import play.data.Form;
@@ -15,6 +17,7 @@ import javax.inject.Inject;
  * This controller contains an action to handle HTTP requests
  * to the application's home page.
  */
+@Security.Authenticated(Secured.class)
 public class Auth extends Controller {
 
     private final FormFactory formFactory;
@@ -33,7 +36,7 @@ public class Auth extends Controller {
      * @return пустая форма регистрации.
      */
     public Result signup() {
-        if (session("email"). != null) return redirect(routes.HomeController.index());
+        if (session("email") != null) return redirect(routes.Auth.signup());
         else return ok(register.render(formFactory.form(Register.class)));
     }
 
@@ -99,6 +102,23 @@ public class Auth extends Controller {
             session("email", loginForm.get().email);
             //ключик в краткосрочной памяти длявыдачи alert-ов
             flash("success","Вы успешно аутентифицировались. Добро пожаловать!");
+            //перенаправляем на вход либо на главную страницу, либо в область администрирования
+            return redirect(routes.HomeController.index());
+        }
+    }
+
+    public Result profile() {
+        return ok(profile.render(formFactory.form(ChangePsswrd.class)));
+    }
+
+    public Result changePsswrd() {
+        Form<ChangePsswrd> changePsswrdForm = formFactory.form(ChangePsswrd.class).bindFromRequest();
+        if (changePsswrdForm.hasErrors())
+            //Ты не пройдешь!
+            return badRequest(profile.render(changePsswrdForm));
+        else {
+
+            flash("success","Пароль успешно изменён!");
             //перенаправляем на вход либо на главную страницу, либо в область администрирования
             return redirect(routes.HomeController.index());
         }
