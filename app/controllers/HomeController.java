@@ -15,7 +15,7 @@ import java.util.List;
  * This controller contains an action to handle HTTP requests
  * to the application's home page.
  */
-
+@Security.Authenticated(Secured.class)
 public class HomeController extends Controller {
 
     private final FormFactory formFactory;

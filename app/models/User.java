@@ -148,6 +148,7 @@ public class User extends Model {
 
     public static String changePsswrd(String _password) {
         User user = find.byId(new Secured().getUsername(current()));
+
         if (user!=null) {
             user.setPassword(_password);
             return "Пароль успешно изменён";

@@ -17,7 +17,7 @@ import javax.inject.Inject;
  * This controller contains an action to handle HTTP requests
  * to the application's home page.
  */
-@Security.Authenticated(Secured.class)
+
 public class Auth extends Controller {
 
     private final FormFactory formFactory;
@@ -117,8 +117,7 @@ public class Auth extends Controller {
             //Ты не пройдешь!
             return badRequest(profile.render(changePsswrdForm));
         else {
-
-            flash("success","Пароль успешно изменён!");
+            //flash("success","Пароль успешно изменён!");
             //перенаправляем на вход либо на главную страницу, либо в область администрирования
             return redirect(routes.HomeController.index());
         }

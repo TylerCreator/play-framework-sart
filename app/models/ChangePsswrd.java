@@ -32,7 +32,8 @@ import static play.mvc.Http.Context.current;
  *
  */
 
-public class ChangePsswrd extends Model {
+@Constraints.Validate
+public class ChangePsswrd implements Constraints.Validatable<String> {
 
 
     @Constraints.Required(message = "Обязательное поле")
@@ -45,11 +46,14 @@ public class ChangePsswrd extends Model {
     public String newPassword2;
 
     // Валидация формы
+    @Override
     public String validate() {
         // Проверка соответствия логина и пароля
         User user = find.byId(new Secured().getUsername(current()));
-        if (user.checkPassword(password)&&newPassword.equals(newPassword2))
-            return User.changePsswrd(password);
+        if(user != null&&user.checkPassword(password)&&newPassword.equals(newPassword2)){
+            User.changePsswrd(newPassword);
+            return null;
+        }
         else
             return "вы ошиблисть при вводе информации";
     }
