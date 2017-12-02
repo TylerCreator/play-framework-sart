@@ -151,6 +151,7 @@ public class User extends Model {
 
         if (user!=null) {
             user.setPassword(_password);
+            user.save();
             return "Пароль успешно изменён";
         }
         else
