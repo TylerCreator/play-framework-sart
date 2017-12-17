@@ -15,7 +15,7 @@ POST    /feature                    controllers.HomeController.save()
 GET     /feature/:id                controllers.HomeController.edit(id:Long)
 POST    /feature/:id                controllers.HomeController.update(id:Long)
 
-POST    /feature/:id/delete         controllers.HomeController.delete(id:Long)
+GET    /feature/:id/delete         controllers.HomeController.delete(id:Long)
 
 #Регистрация
 GET     /register                    controllers.Auth.register()

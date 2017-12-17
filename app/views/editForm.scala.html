@@ -20,11 +20,7 @@
         <div class="actions">
             <input type="submit" value="Сохранить" class="btn primary">
             <a href="@routes.HomeController.list()" class="btn btn-default">Отменить</a>
-            @form(routes.HomeController.delete(id), 'class -> "topRight") {
-                @CSRF.formField
-                <input type="submit" value="Удалить" class="btn btn-danger">
-            }
-
+            <a href="@routes.HomeController.delete(id)" class="btn btn-default">Удалить</a>
         </div>
     }
 }
